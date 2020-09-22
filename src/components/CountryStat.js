@@ -61,10 +61,10 @@ const StatsBody = styled.div`
 `;
 
 const SingleCountryContainer = styled.div`
+  text-align: center;
     .grid {
       @media (max-width: 767px) {
         display: block;
-        text-align: center;
 
         .column {
           display: block !important;
