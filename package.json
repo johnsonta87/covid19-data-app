@@ -1,5 +1,5 @@
 {
-  "name": "Covid19 Live Data",
+  "name": "gatsby-covid19-live-data-app",
   "private": true,
   "description": "A web app to view data on the latest COVID19 virus.",
   "version": "0.1.0",
@@ -32,7 +32,7 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "build": "npm run build",
+    "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
