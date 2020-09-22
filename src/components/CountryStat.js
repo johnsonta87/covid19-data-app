@@ -69,6 +69,7 @@ const SingleCountryContainer = styled.div`
         .column {
           display: block !important;
           margin: 0 auto;
+          width: 100% !important;
         }
       }
 

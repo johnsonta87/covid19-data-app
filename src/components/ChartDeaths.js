@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { AreaChart, Tooltip, Area, CartesianGrid, XAxis, YAxis } from 'recharts'
+import { AreaChart, Area, CartesianGrid, XAxis, YAxis } from 'recharts'
 
 export default function Chart(props) {
   const [data, setData] = useState([]);
@@ -30,7 +30,7 @@ export default function Chart(props) {
     });
 
   return (
-    <AreaChart width={350} height={200} data={data}
+    <AreaChart width={270} height={200} data={data}
       margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
       <defs>
         <linearGradient id="colorDeaths" x1="0" y1="0" x2="0" y2="1">
@@ -41,7 +41,6 @@ export default function Chart(props) {
       <XAxis dataKey="date" />
       <YAxis />
       <CartesianGrid strokeDasharray="3 3" />
-      <Tooltip cursor={{ stroke: '#DC143C', strokeWidth: 2 }} />
       <Area type="monotone" dataKey="deaths" stroke="#DC143C" fillOpacity={1} fill="url(#colorDeaths)" />
     </AreaChart>
   )

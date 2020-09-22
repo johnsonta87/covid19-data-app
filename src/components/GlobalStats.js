@@ -33,6 +33,12 @@ const GlobalStatsStyles = styled.div`
 
     .stats-block {
       width: 33.33%;
+      margin-left: auto;
+      margin-right: auto;
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
     }
 
     @media (max-width: 768px) {
