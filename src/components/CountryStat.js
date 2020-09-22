@@ -76,6 +76,12 @@ const SingleCountryContainer = styled.div`
       .recharts-wrapper {
         margin: 0 auto 25px;
       }
+
+      .dailyReport {
+        text-align: center;
+        margin-top: 25px;
+        color: #555;
+      }
     }
 `;
 
@@ -118,6 +124,9 @@ export default function CountryStat(props) {
                         <Segment>
                           <p className="confirmed-text">{response.data.confirmed.value ? numFormat(response.data.confirmed.value) : 0}</p>
                           <h4>Confirmed</h4>
+
+                          <h4 className="dailyReport">Daily report</h4>
+                          <ChartConfirmed country={props.stat} />
                         </Segment>
                       </StatsBody>
                     </Grid.Column>
@@ -126,6 +135,9 @@ export default function CountryStat(props) {
                         <Segment>
                           <p className="recovered-text">{response.data.recovered.value ? numFormat(response.data.recovered.value) : 0}</p>
                           <h4>Recovered</h4>
+
+                          <h4 className="dailyReport">Daily report</h4>
+                          <ChartRecovered country={props.stat} />
                         </Segment>
                       </StatsBody>
                     </Grid.Column>
@@ -134,17 +146,14 @@ export default function CountryStat(props) {
                         <Segment>
                           <p className="deaths-text">{response.data.deaths.value ? numFormat(response.data.deaths.value) : 0}</p>
                           <h4>Deaths</h4>
+
+                          <h4 className="dailyReport">Daily report</h4>
+                          <ChartDeaths country={props.stat} />
                         </Segment>
                       </StatsBody>
                     </Grid.Column>
                   </Grid>
 
-
-                  <Grid container columns={3}>
-                    <ChartConfirmed country={props.stat} />
-                    <ChartRecovered country={props.stat} />
-                    <ChartDeaths country={props.stat} />
-                  </Grid>
                 </SingleCountryContainer>
               ) : ''}
             </React.Fragment>
