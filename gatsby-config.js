@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Covid19 Live Data`,
     description: `A web app to view data on the latest COVID19 virus.`,
-    author: `@gatsbyjs`,
+    author: `@johnsonta87`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

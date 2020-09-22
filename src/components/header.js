@@ -1,5 +1,4 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
+import { Link, graphql, StaticQuery } from "gatsby"
 import React from "react"
 import styled from 'styled-components'
 
@@ -8,32 +7,43 @@ const HeaderStyles = styled.header`
   background-color: #CD5C5C;
   color: #fff;
   padding: 10px 0;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
 `;
 
-const Header = ({ siteTitle }) => (
-  <HeaderStyles>
-    <div>
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `#fff`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </HeaderStyles>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+const Header = ({ data }) => {
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          site {
+            siteMetadata {
+              title
+              description
+            }
+          }
+        }
+      `}
+      render={data => (
+        <HeaderStyles>
+          <div>
+            <h1 style={{ margin: 0 }}>
+              <Link
+                to="/"
+              >
+                {data.site.siteMetadata.title}
+              </Link>
+            </h1>
+            {data.site.siteMetadata.description}
+          </div>
+        </HeaderStyles>
+      )}
+    />
+  )
 }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header
