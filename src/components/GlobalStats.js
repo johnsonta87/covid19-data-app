@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { numFormat } from '../utils/helpers'
 
 const GlobalStatsStyles = styled.div`
-  background: SLATEBLUE;
+  background: rgba(205, 92, 92, 0.25);
   padding: 1rem;
   -webkit-border-bottom-right-radius: 5px;
   -webkit-border-bottom-left-radius: 5px;
@@ -16,12 +16,13 @@ const GlobalStatsStyles = styled.div`
   .lastUpd {
     text-align: center;
     margin-top: 2em;
-    color: #fff;
+    color: #CD5C5C;
+    font-weight: bold;
   }
 
   h2 {
     text-align: center;
-    color: #fff;
+    color: #555;
   }
 
   .total-stats-container {
@@ -48,7 +49,7 @@ const GlobalStatsStyles = styled.div`
     h4 {
       font-size: 1em;
       margin: 0;
-      color: #fff;
+      color: #555;
 
       @media (max-width: 768px) {
         margin-bottom: 1.5em;

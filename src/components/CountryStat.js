@@ -16,15 +16,16 @@ const ButtonFetch = styled.div`
 
   .button {
     margin: 0 auto;
-    background-color: SLATEBLUE;
-    border: 1px solid SLATEBLUE;
+    background: #CD5C5C;
+    border: 1px solid #CD5C5C;
     color: #fff;
+    transition: .2s all ease-in;
 
     &:hover,
     &:active,
     &:focus {
-      background-color: #fff;
-      color: SLATEBLUE;
+    background: rgba(205, 92, 92, 0.85);
+    color: #fff;
     }
   }
 `;
@@ -34,7 +35,7 @@ const StatsBody = styled.div`
       margin: 0;
       font-size: 1em;
       font-weight: bold;
-      color: SLATEBLUE;
+      color: #CD5C5C;
     }
 
     p {
