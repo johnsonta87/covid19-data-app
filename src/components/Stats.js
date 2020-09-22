@@ -24,7 +24,6 @@ const DropdownListStyles = styled.div`
 
 export default function CountriesStats(props) {
   const [countryCode, setCountryCode] = useState('');
-  const [countryName, setCountryName] = useState('');
 
   const handleDropdownChange = (e, data) => {
     setCountryCode(data.value);

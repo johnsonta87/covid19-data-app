@@ -86,6 +86,12 @@ export default function GlobalStats(props) {
         <div className="stats-block confirmed">
           <p className="confirmed-text">{numFormat(confirmed.value)}</p>
           <h4>Confirmed</h4>
+
+          <Grid container columns={1}>
+            <Grid.Column>
+              <ChartConfirmed />
+            </Grid.Column>
+          </Grid>
         </div>
 
         <div className="stats-block recovered">
