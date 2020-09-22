@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { numFormat } from '../utils/helpers'
-import { Grid, Segment } from 'semantic-ui-react'
-import ChartConfirmed from './ChartConfirmed'
 
 const GlobalStatsStyles = styled.div`
   background: SLATEBLUE;
@@ -86,12 +84,6 @@ export default function GlobalStats(props) {
         <div className="stats-block confirmed">
           <p className="confirmed-text">{numFormat(confirmed.value)}</p>
           <h4>Confirmed</h4>
-
-          <Grid container columns={1}>
-            <Grid.Column>
-              <ChartConfirmed />
-            </Grid.Column>
-          </Grid>
         </div>
 
         <div className="stats-block recovered">
@@ -104,7 +96,6 @@ export default function GlobalStats(props) {
           <h4>Deaths</h4>
         </div>
       </div>
-
       <p className="lastUpd"><small>{`Last updated: ${new Date(lastUpdate).toJSON().slice(0, 10)}`}</small></p>
 
     </GlobalStatsStyles>

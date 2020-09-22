@@ -3,6 +3,9 @@ import Request from 'axios-react'
 import styled from 'styled-components'
 import { numFormat } from '../utils/helpers'
 import { Button, Grid, Segment } from 'semantic-ui-react'
+import ChartConfirmed from './ChartConfirmed'
+import ChartRecovered from './ChartRecovered'
+import ChartDeaths from './ChartDeaths'
 
 const ButtonFetch = styled.div`
   display: flex;
@@ -68,6 +71,10 @@ const SingleCountryContainer = styled.div`
           margin: 0 auto;
         }
       }
+
+      .recharts-wrapper {
+        margin: 0 auto 25px;
+      }
     }
 `;
 
@@ -77,7 +84,6 @@ const ErrorStyles = styled.div`
 `;
 
 export default function CountryStat(props) {
-
   return (
     <Request
       config={{
@@ -130,6 +136,13 @@ export default function CountryStat(props) {
                         </Segment>
                       </StatsBody>
                     </Grid.Column>
+                  </Grid>
+
+
+                  <Grid container columns={3}>
+                    <ChartConfirmed country={props.stat} />
+                    <ChartRecovered country={props.stat} />
+                    <ChartDeaths country={props.stat} />
                   </Grid>
                 </SingleCountryContainer>
               ) : ''}

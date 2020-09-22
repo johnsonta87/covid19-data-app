@@ -6,7 +6,7 @@ import { Dropdown } from 'semantic-ui-react'
 
 const CountriesListStyles = styled.div`
   background: rgba(150, 60, 98, 0.1);
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 3px;
 `;
 
@@ -40,6 +40,7 @@ export default function CountriesStats(props) {
         <div>
           {response && (
             <CountriesListStyles>
+
               <DropdownListStyles>
                 <Dropdown
                   placeholder='Select your country'
@@ -53,7 +54,7 @@ export default function CountriesStats(props) {
                         key: code,
                         name: countryItem.name,
                         text: countryItem.name,
-                        value: countryItem.iso3
+                        value: countryItem.iso2
                       }
                     })
                   }
@@ -62,7 +63,9 @@ export default function CountriesStats(props) {
               </DropdownListStyles>
 
               {countryCode ?
-                <CountryStat stat={countryCode} />
+                <div>
+                  <CountryStat stat={countryCode} />
+                </div>
                 : ''
               }
             </CountriesListStyles>

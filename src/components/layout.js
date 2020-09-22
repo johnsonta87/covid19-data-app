@@ -29,7 +29,10 @@ const Layout = ({ children }) => {
         <main>{children}</main>
         <FooterStyles>
           <h4>Data sources:</h4>
-          <p><a href="https://github.com/mathdroid/covid-19-api" target="_blank" rel="noreferrer"><strong>@mathdroid</strong>'s COVID-19-API</a></p>
+          <p>
+            <a href="https://github.com/mathdroid/covid-19-api" target="_blank" rel="noreferrer"><strong>@mathdroid</strong>'s COVID-19-API</a><br />
+            <a href="https://about-corona.net/" target="_blank" rel="noreferrer">ABOUT-CORONA.NET</a>
+          </p>
           {new Date().getFullYear()} - Coded by <a href="https://github.com/johnsonta87" target="_blank" rel="noreferrer">@johnsonta87</a> using <a href="https://www.gatsbyjs.com/" target="_blank" rel="noreferrer">Gatsby React</a>.
         </FooterStyles>
       </Container>
