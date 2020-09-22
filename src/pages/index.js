@@ -3,6 +3,7 @@ import Request from 'axios-react'
 import 'semantic-ui-css/semantic.min.css'
 import { Loader } from 'semantic-ui-react'
 
+import SEO from "../components/seo"
 import Layout from "../components/layout"
 import GlobalStats from "../components/GlobalStats"
 import Stats from "../components/Stats"
@@ -12,6 +13,7 @@ const App = () => {
 
   return (
     <Layout>
+      <SEO title="Covid19 Live Data" />
       <Request
         config={{
           method: 'get',
