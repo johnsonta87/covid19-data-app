@@ -1,22 +1,39 @@
 import React from "react"
-import { Link } from "gatsby"
+import Request from 'axios-react'
+import 'semantic-ui-css/semantic.min.css'
+import { Loader } from 'semantic-ui-react'
 
 import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import GlobalStats from "../components/GlobalStats"
+import Stats from "../components/Stats"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
 
-export default IndexPage
+const App = () => {
+
+  return (
+    <Layout>
+      <Request
+        config={{
+          method: 'get',
+          url: 'https://covid19.mathdro.id/api',
+        }}
+      >
+        {({ loading, response, error }) => (
+          <div>
+            {loading && <Loader active>Loading</Loader>}
+            {error && <span>{error.response.data}</span>}
+            {response && (
+              <React.Fragment>
+                <GlobalStats data={response.data} />
+                <Stats countries={response.data.countries} />
+              </React.Fragment>
+            )}
+          </div>
+        )}
+      </Request>
+
+    </Layout>
+  )
+}
+
+export default App
