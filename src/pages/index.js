@@ -13,7 +13,7 @@ const App = () => {
 
   return (
     <Layout>
-      <SEO title="Covid19 Live Data" />
+      <SEO title="Welcome" />
       <Request
         config={{
           method: 'get',
