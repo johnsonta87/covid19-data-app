@@ -13,7 +13,7 @@ export default function Chart(props) {
   const [data, setData] = useState([]);
 
   const propsCountry = props.country;
-  const strCountry = propsCountry.substring(0, 2);
+  const strCountry = propsCountry.split('?')[0];
 
   const url = `https://corona-api.com/countries/${strCountry}`
   axios.get(url)

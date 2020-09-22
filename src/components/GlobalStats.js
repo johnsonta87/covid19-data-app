@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { numFormat } from '../utils/helpers'
+import CountUp from 'react-countup';
 
 const GlobalStatsStyles = styled.div`
   background: rgba(205, 92, 92, 0.25);
@@ -56,8 +57,9 @@ const GlobalStatsStyles = styled.div`
       }
     }
 
-    p {
-      margin: 0;
+    span {
+      display: block;
+      margin: 0 auto 15px;
       font-size: 2.5em;
       font-weight: bold;
 
@@ -89,17 +91,53 @@ export default function GlobalStats(props) {
 
       <div className="total-stats-container">
         <div className="stats-block confirmed">
-          <p className="confirmed-text">{numFormat(confirmed.value)}</p>
+          <CountUp
+            className="confirmed-text"
+            start={0}
+            end={confirmed.value}
+            duration={1}
+            delay={1}
+            useEasing={true}
+            useGrouping={true}
+            separator=","
+            decimal=","
+            onEnd={() => console.log('Ended! 👏')}
+            onStart={() => console.log('Started! 💨')}
+          />
           <h4>Confirmed</h4>
         </div>
 
         <div className="stats-block recovered">
-          <p className="recovered-text">{numFormat(recovered.value)}</p>
+          <CountUp
+            className="recovered-text"
+            start={0}
+            end={recovered.value}
+            duration={1}
+            delay={1}
+            useEasing={true}
+            useGrouping={true}
+            separator=","
+            decimal=","
+            onEnd={() => console.log('Ended! 👏')}
+            onStart={() => console.log('Started! 💨')}
+          />
           <h4>Recovered</h4>
         </div>
 
         <div className="stats-block deaths">
-          <p className="deaths-text">{numFormat(deaths.value)}</p>
+          <CountUp
+            className="deaths-text"
+            start={0}
+            end={deaths.value}
+            duration={1}
+            delay={1}
+            useEasing={true}
+            useGrouping={true}
+            separator=","
+            decimal=","
+            onEnd={() => console.log('Ended! 👏')}
+            onStart={() => console.log('Started! 💨')}
+          />
           <h4>Deaths</h4>
         </div>
       </div>
