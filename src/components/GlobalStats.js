@@ -24,6 +24,7 @@ const GlobalStatsStyles = styled.div`
   h2 {
     text-align: center;
     color: #555;
+    margin-bottom: 30px;
   }
 
   .total-stats-container {
